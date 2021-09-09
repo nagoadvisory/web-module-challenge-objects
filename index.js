@@ -1,5 +1,7 @@
 /*MAKE SURE TO RETURN ALL OF THE ANSWERS ON THESE TASKS, IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
 
+const { arrayExpression } = require("@babel/types");
+
 /*When doing these tasks, we recommend using console.log to test the output of your code to make sure it works correctly.*/
 
 ///////////////Menu Items (MVP)///////////////////
@@ -36,6 +38,11 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log('Task 1b1',createMenuItem("pizza", 5, "lunch"));
+console.log('Task 1b2',createMenuItem("Hot Dog", 5, "breakfast"));
+console.log('Task 1b3',createMenuItem("Curry", 10, "dinner"));
+
+
 
 
 
@@ -55,8 +62,8 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
 }
+
 
 
 
@@ -74,19 +81,19 @@ const reviews = [
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Using the reviews array above:
-  1. log only Julius' feedback to the console - no function needed 
+  1. log only Julius' feedback to the console - no function needed ...also not graded
 */
 
-
+console.log('Task 3: ',reviews[5].feedback);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
+Reyna's feedback is missing! Use what you know to do the following: (no function needed) ....already done
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
 reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
-console.log(reviews);
+// console.log(reviews);
 
 
 
@@ -100,12 +107,15 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(array, name, rating, feedback){
+  let createdObject = {name, rating, feedback};
+  array.push(createdObject);
+  return array;
 }
 
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-Write a function to return a review based on the index of the review in the array.
+Write a function to return a review based on the index of the review in the array. HINT: THINK HOW TO GRAB SOMETHING AT INDEX 0; no need to write a loop here
 
 Use the getReviewByIndex function below to do the following:
   1. Receive an array
@@ -123,7 +133,7 @@ function getReviewByIndex(/*Your code here*/) {
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Write a function to get information about the most recent (last) review called `getLastReview`
+Write a function to get information about the most recent (last) review called `getLastReview` ***use array.length - 1
 
 Use the getLastReview function below to do the following:
   1. Receive an array of objects as a parameter
