@@ -62,9 +62,14 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
+  discount: function(customer) {
+    if (customer === 'teacher' || customer === 'student'){
+      return this.price = 13.5;
+    } else if(customer === 'public'){
+      return this.price = 16.2;
+    }
 }
-
-
+}
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -125,10 +130,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
-
+console.log('Task 6',getReviewByIndex(reviews,0));
 
   
 
@@ -144,7 +149,7 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(array,) {
   /*Your code here*/
 } 
 
